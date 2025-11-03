@@ -1,0 +1,9 @@
+Bagian 1
+No 14 Mengapa error saat build karena pada field myType itu bersifat protected, jadi tidak bisa di akses di luar class, hanya bisa di akses oleh class turunanya
+No 19 saat build ada error ada ambigu untuk myType karena sudah di definisikan dan harus berbeda antara field dan property, dan juga kosong saat di jalankan karena nilai nya belum di isi(null)
+No 24 yang muncul adalah kata DVD karena sudah menetukan nilai untuk field Type
+
+Bagian 2
+No 8 Karena data type dan title tidak dikirim ke kelas induk saat objek dibuat, nilainya jadi kosong ini disebut enkapsulasi dalam OOP.
+No 12 Karena baris : base(type, title) membuat constructor di kelas Book memanggil constructor di kelas Product, sehingga nilai type dan title dari kelas induk ikut terisi saat objek dibuat.
+No 19 Karena nilai untuk MyType sudah di deklarasikan di class DVD_714240042 dan juga tidak di buat parameter untuk menginput type seperti yang Book_714240042
