@@ -1,0 +1,8 @@
+D:\Kegabutan\PEMOGRAMMAN-2-PBO\Pertemuan04\Tugas\P4_2_714240042\bin\Debug\P4_2_714240042.exe.config
+D:\Kegabutan\PEMOGRAMMAN-2-PBO\Pertemuan04\Tugas\P4_2_714240042\bin\Debug\P4_2_714240042.exe
+D:\Kegabutan\PEMOGRAMMAN-2-PBO\Pertemuan04\Tugas\P4_2_714240042\bin\Debug\P4_2_714240042.pdb
+D:\Kegabutan\PEMOGRAMMAN-2-PBO\Pertemuan04\Tugas\P4_2_714240042\obj\Debug\P4_2_714240042.csproj.AssemblyReference.cache
+D:\Kegabutan\PEMOGRAMMAN-2-PBO\Pertemuan04\Tugas\P4_2_714240042\obj\Debug\P4_2_714240042.csproj.CoreCompileInputs.cache
+D:\Kegabutan\PEMOGRAMMAN-2-PBO\Pertemuan04\Tugas\P4_2_714240042\obj\Debug\P4_2_714240042.exe
+D:\Kegabutan\PEMOGRAMMAN-2-PBO\Pertemuan04\Tugas\P4_2_714240042\obj\Debug\P4_2_714240042.pdb
+D:\Kegabutan\PEMOGRAMMAN-2-PBO\Pertemuan04\Tugas\P4_2_714240042\obj\Debug\P4_2_714240042.exe.config

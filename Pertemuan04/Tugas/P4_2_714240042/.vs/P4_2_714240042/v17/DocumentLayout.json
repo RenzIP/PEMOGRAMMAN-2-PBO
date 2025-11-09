@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Kegabutan\\PEMOGRAMMAN-2-PBO\\Pertemuan04\\Tugas\\P4_2_714240042\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7F218B57-FACB-4322-8C0B-8CDD017454B0}|P4_2_714240042.csproj|d:\\kegabutan\\pemogramman-2-pbo\\pertemuan04\\tugas\\p4_2_714240042\\program_meme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F218B57-FACB-4322-8C0B-8CDD017454B0}|P4_2_714240042.csproj|solutionrelative:program_meme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F218B57-FACB-4322-8C0B-8CDD017454B0}|P4_2_714240042.csproj|d:\\kegabutan\\pemogramman-2-pbo\\pertemuan04\\tugas\\p4_2_714240042\\meme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F218B57-FACB-4322-8C0B-8CDD017454B0}|P4_2_714240042.csproj|solutionrelative:meme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F218B57-FACB-4322-8C0B-8CDD017454B0}|P4_2_714240042.csproj|d:\\kegabutan\\pemogramman-2-pbo\\pertemuan04\\tugas\\p4_2_714240042\\memebaper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F218B57-FACB-4322-8C0B-8CDD017454B0}|P4_2_714240042.csproj|solutionrelative:memebaper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F218B57-FACB-4322-8C0B-8CDD017454B0}|P4_2_714240042.csproj|d:\\kegabutan\\pemogramman-2-pbo\\pertemuan04\\tugas\\p4_2_714240042\\memelucu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F218B57-FACB-4322-8C0B-8CDD017454B0}|P4_2_714240042.csproj|solutionrelative:memelucu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MemeBaper.cs",
+              "DocumentMoniker": "D:\\Kegabutan\\PEMOGRAMMAN-2-PBO\\Pertemuan04\\Tugas\\P4_2_714240042\\MemeBaper.cs",
+              "RelativeDocumentMoniker": "MemeBaper.cs",
+              "ToolTip": "D:\\Kegabutan\\PEMOGRAMMAN-2-PBO\\Pertemuan04\\Tugas\\P4_2_714240042\\MemeBaper.cs",
+              "RelativeToolTip": "MemeBaper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T12:08:43.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MemeLucu.cs",
+              "DocumentMoniker": "D:\\Kegabutan\\PEMOGRAMMAN-2-PBO\\Pertemuan04\\Tugas\\P4_2_714240042\\MemeLucu.cs",
+              "RelativeDocumentMoniker": "MemeLucu.cs",
+              "ToolTip": "D:\\Kegabutan\\PEMOGRAMMAN-2-PBO\\Pertemuan04\\Tugas\\P4_2_714240042\\MemeLucu.cs",
+              "RelativeToolTip": "MemeLucu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T12:07:42.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Meme.cs",
+              "DocumentMoniker": "D:\\Kegabutan\\PEMOGRAMMAN-2-PBO\\Pertemuan04\\Tugas\\P4_2_714240042\\Meme.cs",
+              "RelativeDocumentMoniker": "Meme.cs",
+              "ToolTip": "D:\\Kegabutan\\PEMOGRAMMAN-2-PBO\\Pertemuan04\\Tugas\\P4_2_714240042\\Meme.cs",
+              "RelativeToolTip": "Meme.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T12:06:29.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program_Meme.cs",
+              "DocumentMoniker": "D:\\Kegabutan\\PEMOGRAMMAN-2-PBO\\Pertemuan04\\Tugas\\P4_2_714240042\\Program_Meme.cs",
+              "RelativeDocumentMoniker": "Program_Meme.cs",
+              "ToolTip": "D:\\Kegabutan\\PEMOGRAMMAN-2-PBO\\Pertemuan04\\Tugas\\P4_2_714240042\\Program_Meme.cs",
+              "RelativeToolTip": "Program_Meme.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T11:50:39.181Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
