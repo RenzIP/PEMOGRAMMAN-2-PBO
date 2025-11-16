@@ -1,5 +1,11 @@
 # Pemrograman 2 (PBO) — Kumpulan Praktikum & Tugas
 
+## Identitas
+
+- Nama: Bagas
+- NIM: 714240042
+- Mata kuliah: Pemrograman 2 (PBO)
+
 Repositori ini berisi kumpulan praktikum dan tugas mata kuliah Pemrograman 2 (PBO) menggunakan C# (.NET Framework 4.7.2). Setiap pertemuan memiliki solusi/ proyek tersendiri beserta output (screenshot) dan, pada beberapa bagian, file jawaban analisis.
 
 ## Struktur Proyek
@@ -7,6 +13,7 @@ Repositori ini berisi kumpulan praktikum dan tugas mata kuliah Pemrograman 2 (PB
 - Pertemuan03
   - `Pratikum/P3_1_714240042` — Aplikasi konsol penentu indeks prestasi mahasiswa (grade A–E) beserta deskripsi prestasi.
   - `Tugas/P3_2_714240042` — Menu persegi panjang: hitung luas atau keliling berdasarkan input panjang dan lebar.
+  - `Pratikum/Gambar` — Gambar/diagram pendukung praktikum pertemuan 3.
 - Pertemuan04
   - `Praktikum/P4_1_714240042` — Demo OOP (abstraksi & pewarisan) dengan kelas `Product`, `Book`, dan `DVD` + tester.
   - `Tugas/P4_2_714240042` — Demo OOP (enkapsulasi, abstraksi, polimorfisme) dengan kelas `Meme`, `MemeLucu`, `MemeBaper`.
@@ -57,8 +64,9 @@ Umum (semua pertemuan):
 
 ## Output (Screenshot)
 
-Contoh hasil dapat dilihat pada folder `Pertemuan04/Output/...` dan `Pertemuan05/Output/...`, misalnya:
+Contoh hasil dan gambar pendukung dapat dilihat pada folder `Pertemuan03/Pratikum/Gambar/...`, `Pertemuan04/Output/...`, dan `Pertemuan05/Output/...`, misalnya:
 
+- `Pertemuan03/Pratikum/Gambar/image.png`
 - `Pertemuan05/Output/P5_1_714240042/Screenshot 2025-11-10 132239.png`
 - `Pertemuan04/Output/Output_1_714240042/Screenshot 2025-11-03 151353.png`
 
