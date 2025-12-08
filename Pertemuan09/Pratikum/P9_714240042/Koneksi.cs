@@ -10,7 +10,7 @@ namespace P9_714240042
 {
     internal class Koneksi
     {
-        string connectionString = "Server=139.59.111.220;Database=pemrog2ulbi;Uid=gasba;Pwd=-Kampret321";
+        string connectionString = "Server=localhost;Database=pemrog2ulbi;Uid=gasba;Pwd=";
         MySqlConnection kon;
 
         public void OpenConnection()
