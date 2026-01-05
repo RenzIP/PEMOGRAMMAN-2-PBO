@@ -1,0 +1,105 @@
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Data;
+
+namespace P9_714240042.controller
+{
+    internal class Transaksi
+    {
+        public DataTable GetAll()
+        {
+            using (var conn = Db.GetConn())
+            {
+                using (var cmd = new MySqlCommand(
+                    "SELECT t.id_transaksi AS ID, t.id_barang AS `ID Barang`, b.nama_barang AS `Nama Barang`, " +
+                    "b.harga AS Harga, t.qty AS Qty, t.total AS Total " +
+                    "FROM t_transaksi t " +
+                    "JOIN t_barang b ON t.id_barang = b.id_barang " +
+                    "ORDER BY t.id_transaksi",
+                    conn))
+                {
+                    using (var da = new MySqlDataAdapter(cmd))
+                    {
+                        var dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
+        public DataTable Search(string keyword)
+        {
+            using (var conn = Db.GetConn())
+            {
+                using (var cmd = new MySqlCommand(
+                    "SELECT t.id_transaksi AS ID, t.id_barang AS `ID Barang`, b.nama_barang AS `Nama Barang`, " +
+                    "b.harga AS Harga, t.qty AS Qty, t.total AS Total " +
+                    "FROM t_transaksi t " +
+                    "JOIN t_barang b ON t.id_barang = b.id_barang " +
+                    "WHERE b.nama_barang LIKE @key " +
+                    "ORDER BY t.id_transaksi",
+                    conn))
+                {
+                    cmd.Parameters.AddWithValue("@key", $"%{keyword}%");
+                    using (var da = new MySqlDataAdapter(cmd))
+                    {
+                        var dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
+        public int Insert(int idBarang, int qty, int total)
+        {
+            using (var conn = Db.GetConn())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(
+                    "INSERT INTO t_transaksi (id_barang, qty, total) VALUES (@idBarang, @qty, @total)",
+                    conn))
+                {
+                    cmd.Parameters.AddWithValue("@idBarang", idBarang);
+                    cmd.Parameters.AddWithValue("@qty", qty);
+                    cmd.Parameters.AddWithValue("@total", total);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public int Update(int idTransaksi, int idBarang, int qty, int total)
+        {
+            using (var conn = Db.GetConn())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(
+                    "UPDATE t_transaksi SET id_barang=@idBarang, qty=@qty, total=@total WHERE id_transaksi=@id",
+                    conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", idTransaksi);
+                    cmd.Parameters.AddWithValue("@idBarang", idBarang);
+                    cmd.Parameters.AddWithValue("@qty", qty);
+                    cmd.Parameters.AddWithValue("@total", total);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public int Delete(int idTransaksi)
+        {
+            using (var conn = Db.GetConn())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(
+                    "DELETE FROM t_transaksi WHERE id_transaksi=@id",
+                    conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", idTransaksi);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+    }
+}

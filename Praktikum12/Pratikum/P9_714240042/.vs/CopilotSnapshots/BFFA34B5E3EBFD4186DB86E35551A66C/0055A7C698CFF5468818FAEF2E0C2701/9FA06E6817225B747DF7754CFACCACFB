@@ -1,0 +1,138 @@
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace P9_714240042.controller
+{
+    internal class Barang
+    {
+        public DataTable GetAll()
+        {
+            using (var conn = Db.GetConn())
+            {
+                using (var cmd = new MySqlCommand(
+                    "SELECT id_barang AS ID, nama_barang AS `Nama Barang`, harga AS Harga FROM t_barang ORDER BY id_barang",
+                    conn))
+                {
+                    using (var da = new MySqlDataAdapter(cmd))
+                    {
+                        var dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
+        public DataTable Search(string keyword)
+        {
+            using (var conn = Db.GetConn())
+            {
+                using (var cmd = new MySqlCommand(
+                    "SELECT id_barang AS ID, nama_barang AS `Nama Barang`, harga AS Harga " +
+                    "FROM t_barang WHERE nama_barang LIKE @key ORDER BY id_barang",
+                    conn))
+                {
+                    cmd.Parameters.AddWithValue("@key", $"%{keyword}%");
+                    using (var da = new MySqlDataAdapter(cmd))
+                    {
+                        var dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
+        public int Insert(string nama, int harga)
+        {
+            using (var conn = Db.GetConn())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(
+                    "INSERT INTO t_barang (nama_barang, harga) VALUES (@nama, @harga)",
+                    conn))
+                {
+                    cmd.Parameters.AddWithValue("@nama", nama);
+                    cmd.Parameters.AddWithValue("@harga", harga);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public int Update(int id, string nama, int harga)
+        {
+            using (var conn = Db.GetConn())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(
+                    "UPDATE t_barang SET nama_barang=@nama, harga=@harga WHERE id_barang=@id",
+                    conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@nama", nama);
+                    cmd.Parameters.AddWithValue("@harga", harga);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public int Delete(int id)
+        {
+            using (var conn = Db.GetConn())
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand(
+                    "DELETE FROM t_barang WHERE id_barang=@id",
+                    conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public DataTable GetComboBarang()
+        {
+            using (var conn = Db.GetConn())
+            {
+                using (var cmd = new MySqlCommand(
+                    "SELECT id_barang, nama_barang, harga FROM t_barang ORDER BY id_barang",
+                    conn))
+                {
+                    using (var da = new MySqlDataAdapter(cmd))
+                    {
+                        var dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
+        public DataRow GetBarangById(int idBarang)
+        {
+            using (var conn = Db.GetConn())
+            {
+                using (var cmd = new MySqlCommand(
+                    "SELECT nama_barang, harga FROM t_barang WHERE id_barang=@id",
+                    conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", idBarang);
+                    using (var da = new MySqlDataAdapter(cmd))
+                    {
+                        var dt = new DataTable();
+                        da.Fill(dt);
+                        if (dt.Rows.Count > 0)
+                            return dt.Rows[0];
+                        return null;
+                    }
+                }
+            }
+        }
+    }
+}

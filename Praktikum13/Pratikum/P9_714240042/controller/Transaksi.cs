@@ -1,0 +1,82 @@
+using MySql.Data.MySqlClient;
+using System;
+using System.Data;
+
+namespace P9_714240042.controller
+{
+    internal class Transaksi
+    {
+        private Koneksi koneksi = new Koneksi();
+
+        public DataTable GetAll()
+        {
+            string sql = "SELECT t.id_transaksi AS ID, t.id_barang AS `ID Barang`, b.nama_barang AS `Nama Barang`, " +
+                         "b.harga AS Harga, t.qty AS Qty, t.total AS Total " +
+                         "FROM t_transaksi t " +
+                         "JOIN t_barang b ON t.id_barang = b.id_barang " +
+                         "ORDER BY t.id_transaksi";
+            return (DataTable)koneksi.ShowData(sql);
+        }
+
+        public DataTable Search(string keyword)
+        {
+            string sql = "SELECT t.id_transaksi AS ID, t.id_barang AS `ID Barang`, b.nama_barang AS `Nama Barang`, " +
+                         "b.harga AS Harga, t.qty AS Qty, t.total AS Total " +
+                         "FROM t_transaksi t " +
+                         "JOIN t_barang b ON t.id_barang = b.id_barang " +
+                         "WHERE b.nama_barang LIKE @key " +
+                         "ORDER BY t.id_transaksi";
+            return (DataTable)koneksi.ShowDataParam(sql, new MySqlParameter("@key", "%" + keyword + "%"));
+        }
+
+        public void Insert(int idBarang, int qty, int total)
+        {
+            try
+            {
+                koneksi.OpenConnection();
+                var cmd = new MySqlCommand("INSERT INTO t_transaksi (id_barang, qty, total) VALUES (@idBarang, @qty, @total)");
+                cmd.Parameters.AddWithValue("@idBarang", idBarang);
+                cmd.Parameters.AddWithValue("@qty", qty);
+                cmd.Parameters.AddWithValue("@total", total);
+                koneksi.ExecuteQuery(cmd);
+            }
+            finally
+            {
+                koneksi.CloseConnection();
+            }
+        }
+
+        public void Update(int idTransaksi, int idBarang, int qty, int total)
+        {
+            try
+            {
+                koneksi.OpenConnection();
+                var cmd = new MySqlCommand("UPDATE t_transaksi SET id_barang=@idBarang, qty=@qty, total=@total WHERE id_transaksi=@id");
+                cmd.Parameters.AddWithValue("@id", idTransaksi);
+                cmd.Parameters.AddWithValue("@idBarang", idBarang);
+                cmd.Parameters.AddWithValue("@qty", qty);
+                cmd.Parameters.AddWithValue("@total", total);
+                koneksi.ExecuteQuery(cmd);
+            }
+            finally
+            {
+                koneksi.CloseConnection();
+            }
+        }
+
+        public void Delete(int idTransaksi)
+        {
+            try
+            {
+                koneksi.OpenConnection();
+                var cmd = new MySqlCommand("DELETE FROM t_transaksi WHERE id_transaksi=@id");
+                cmd.Parameters.AddWithValue("@id", idTransaksi);
+                koneksi.ExecuteQuery(cmd);
+            }
+            finally
+            {
+                koneksi.CloseConnection();
+            }
+        }
+    }
+}

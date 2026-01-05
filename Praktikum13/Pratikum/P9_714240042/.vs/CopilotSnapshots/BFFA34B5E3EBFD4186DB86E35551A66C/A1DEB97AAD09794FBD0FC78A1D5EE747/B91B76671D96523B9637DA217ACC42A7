@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace P9_714240042.view
+{
+    public partial class FormLogin : Form
+    {
+        public FormLogin()
+        {
+            InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            // Validasi login sederhana (bisa disesuaikan dengan database)
+            string username = tbUsername.Text;
+            string password = tbPassword.Text;
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Username dan Password tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Contoh validasi sederhana (ganti dengan validasi database jika diperlukan)
+            if (username == "admin" && password == "admin")
+            {
+                MessageBox.Show("Login Berhasil!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                // Buka ParentForm
+                ParentForm parentForm = new ParentForm();
+                parentForm.Show();
+                
+                // Sembunyikan FormLogin
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Username atau Password salah!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbPassword.Clear();
+                tbUsername.Focus();
+            }
+        }
+    }
+}

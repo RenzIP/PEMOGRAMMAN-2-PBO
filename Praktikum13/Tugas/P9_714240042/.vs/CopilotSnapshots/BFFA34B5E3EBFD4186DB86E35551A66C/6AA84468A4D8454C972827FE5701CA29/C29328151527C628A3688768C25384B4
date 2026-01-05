@@ -1,0 +1,70 @@
+﻿using OfficeOpenXml;
+using System;
+using System.IO;
+using System.Windows.Forms;
+
+namespace P9_714240042.lib
+{
+    internal class Excel
+    {
+        public void ExportToExcel(DataGridView dataGridView, string searchData)
+        {
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("Tidak ada data untuk diekspor", "Peringatan",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "Excel Files|*.xlsx";
+            saveDialog.Title = "Simpan File Excel";
+            saveDialog.FileName = "Data_Export_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (ExcelPackage package = new ExcelPackage())
+                    {
+                        ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Data");
+
+                        // Header
+                        for (int i = 0; i < dataGridView.Columns.Count; i++)
+                        {
+                            worksheet.Cells[1, i + 1].Value = dataGridView.Columns[i].HeaderText;
+                            worksheet.Cells[1, i + 1].Style.Font.Bold = true;
+                        }
+
+                        // Data rows
+                        for (int i = 0; i < dataGridView.Rows.Count; i++)
+                        {
+                            for (int j = 0; j < dataGridView.Columns.Count; j++)
+                            {
+                                if (dataGridView.Rows[i].Cells[j].Value != null)
+                                {
+                                    worksheet.Cells[i + 2, j + 1].Value = dataGridView.Rows[i].Cells[j].Value.ToString();
+                                }
+                            }
+                        }
+
+                        // Auto fit columns
+                        worksheet.Cells.AutoFitColumns();
+
+                        // Save file
+                        FileInfo fileInfo = new FileInfo(saveDialog.FileName);
+                        package.SaveAs(fileInfo);
+
+                        MessageBox.Show("Data berhasil diekspor ke Excel", "Informasi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Gagal mengekspor: " + ex.Message, "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+    }
+}
